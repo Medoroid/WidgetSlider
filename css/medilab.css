@@ -23,7 +23,7 @@ main .widget-box-indecator{
 .ShowImg{
     background: #0000005f;
     inset: 0;
-    display: none;
+    display: flex;
         justify-content: space-between;
         align-items: center;
 }

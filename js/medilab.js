@@ -37,22 +37,19 @@ Indecator.forEach(function(dot){
     dot.addEventListener('click',function(e){
         console.log(e.target.getAttribute('src'))
         LargeImege.setAttribute('src', e.target.getAttribute('src'));
-        ShowImg.classList.add('d-flex');
+        if (!ShowImg.classList.contains('d-flex')) {
+            ShowImg.classList.add('d-flex')
+         }else{
+            console.log(false);
+            
+         }
+        ShowImg.classList.remove('d-none');
     })
 }) 
-Indecator.forEach(function(dot){
-    dot.addEventListener('click',function(e){
- if (e.target.classList.contains('Showed')) {
-    console.log(true)
- }else{
-    console.log(false);
-    
- }
-    })
-}) 
+
 function closeImage(){
-    if (ShowImg.classList.contains('d-flex')) {
-        ShowImg.classList.remove('d-flex')
+    if (!ShowImg.classList.contains('d-none')) {
+        ShowImg.classList.add('d-none')
      }else{
         console.log(false);
         
