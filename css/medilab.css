@@ -1,0 +1,45 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    }
+    html {
+    scroll-behavior: smooth;
+    }
+    body {
+    background: #ffffff;
+    padding: 30px;
+    }
+    #LargeImege{
+        height: calc(100vh / 2) ;
+        width: 50%;
+        object-fit: contain;
+    }
+main .widget-box-indecator{
+    width: calc(100% / 3);
+}
+.ShowImg{
+    background: #0000005f;
+    inset: 0;
+    display: none;
+        justify-content: space-between;
+        align-items: center;
+}
+.ShowImg button{
+    border: none;
+    background:none;
+}
+.ShowImg button svg{
+    font-size: 50px;
+    color: #fff;
+}
+.widget-box-indecator{
+    width: calc(100% / 3);
+    height: 100px;
+}
+.close-btn{
+    top: 20px;
+    right: 20px;
+}
