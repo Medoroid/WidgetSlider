@@ -13,45 +13,34 @@ let Indecator = document.querySelectorAll('.widget-box-indecator')
 let IndecatorImag = document.querySelectorAll('.widget-box-indecator img')
 let ShowImg = document.querySelector('.ShowImg')
 let imgArray = [img1,img2,img3,img4,img5,img6,img7,img8,img9]
-let randomImg=0
+let randomImg = Math.floor(Math.random() * imgArray.length)
+
 function getRandomImg(){
-
     randomImg = Math.floor(Math.random() * imgArray.length)
-    LargeImege.setAttribute('src',`${imgArray[randomImg].src}`)
-
-  
+    LargeImege.setAttribute('src', imgArray[randomImg].src)
 }
-setInterval( getRandomImg ,5000)
+getRandomImg();
+
+setInterval(getRandomImg ,5000)
 
 btn.addEventListener('click', function (){
-    randomImg = (randomImg + 1)% imgArray.length;
-    LargeImege.setAttribute('src',`${imgArray[randomImg].src}`)
-    console.log(randomImg)
-    })
-    function prevImg() {
-        randomImg = (randomImg - 1 + imgArray.length) % imgArray.length;
-        LargeImege.setAttribute('src', imgArray[randomImg].src);
-        console.log(randomImg)
-    }
+    randomImg = (randomImg + 1) % imgArray.length;
+    LargeImege.setAttribute('src', imgArray[randomImg].src)
+})
+
+function prevImg() {
+    randomImg = (randomImg - 1 + imgArray.length) % imgArray.length;
+    LargeImege.setAttribute('src', imgArray[randomImg].src);
+}
+
 Indecator.forEach(function(dot){
     dot.addEventListener('click',function(e){
-        console.log(e.target.getAttribute('src'))
         LargeImege.setAttribute('src', e.target.getAttribute('src'));
-        if (!ShowImg.classList.contains('d-flex')) {
-            ShowImg.classList.add('d-flex')
-         }else{
-            console.log(false);
-            
-         }
+        ShowImg.classList.add('d-flex');
         ShowImg.classList.remove('d-none');
     })
-}) 
+})
 
 function closeImage(){
-    if (!ShowImg.classList.contains('d-none')) {
-        ShowImg.classList.add('d-none')
-     }else{
-        console.log(false);
-        
-     }
+    ShowImg.classList.add('d-none');
 }
